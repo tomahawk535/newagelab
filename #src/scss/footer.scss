@@ -1,0 +1,41 @@
+footer {
+  background: linear-gradient( to top, #b7b7b7 25%, #eeee 90%);
+  .footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap:16px;
+    background-color: #727272;
+    padding: 10px 20px 18px;
+    margin-bottom: 168px;
+    border-radius: 10px;
+    .footer__title {
+      width: 100%;
+    }
+    .footer__item {
+      display: flex;
+      width: 30%;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 0;
+
+      &:nth-child(n+5) {
+        background-color: #cccccc;
+      }
+    }
+  }
+}
+//====================================================================================================
+
+//============ mobile =================================================================================
+@media (max-width: 767px) {
+  footer {
+    .footer__container {
+      .footer__item {
+        width: 100%;
+      }
+    }
+  }
+
+}

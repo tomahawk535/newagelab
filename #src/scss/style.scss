@@ -1,0 +1,359 @@
+@use "sass:math";
+//<МИКСИНЫ>===============================================================================================
+@import "mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic-ext');
+
+@import "fonts";
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+//@import "icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "Arial", sans-serif;
+
+//font-family: 'Roboto', sans-serif;
+$fontSize: 16;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>==========================================================================================================
+$minWidth: 320px;
+$maxWidth: 1280;
+$maxWidthContainer: 940;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #000;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+body {
+	color: $mainColor;
+	&._lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	//background-image: url("../img/main-bg.jpg");
+	background-color: #eeeeee;
+	background-size: cover;
+	background-repeat: no-repeat;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	@media (max-width: $md1 + px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms";
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "datepicker";
+//@import "lightgallery";
+//@import "pagging";
+@import "popup";
+@import "header";
+@import "footer";
+@import "home";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	flex: 1 1 auto;
+}
+//===================================================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+.form__container {
+	display: flex;
+	background-color: #cccccc;
+
+
+	.form__section {
+		display: flex;
+		width: 50%;
+		padding: 15px 20px 34px;
+		flex-direction: column;
+		align-items: start;
+
+		fieldset {
+			max-width: 280px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			legend {
+				width: 100%;
+				font-family: "Roboto", sans-serif;
+				font-size: 24px;
+				line-height: 1.2;
+				font-weight: 400;
+				color: #343434;
+			}
+
+			.input__group {
+				display: flex;
+				flex-direction: column;
+				align-items: start;
+				width: 47%;
+				&.first__input {
+					width: 100%;
+				}
+				input {
+					width: 100%;
+					border: 2.1px solid #6f6f6f;
+					height: 33px;
+				}
+				label {
+					font-family: "Roboto", sans-serif;
+					font-size: 14px;
+					line-height: 1.2;
+					font-weight: 400;
+					color: #343434;
+					margin: 10px 0;
+				}
+				//&:nth-child(even){
+				//	margin-left: 17px;
+				//}
+			}
+		}
+		.submit__btn {
+			margin: 13px 0 0;
+			background-color: #006c86;
+			cursor: pointer;
+			border-radius: 6px;
+			padding: 10px 67px;
+			color: #fff;
+			text-transform: uppercase;
+		}
+	}
+
+	.text__section {
+		width: 50%;
+		display: flex;
+		align-items: center;
+		padding: 20px;
+
+		.text__container {
+			width: 100%;
+			max-width: 294px;
+			margin-left: auto;
+			background-color: #ededed;
+			box-shadow: 1px 2px 4px 0 rgba(1,1,1,0.25);
+			border-radius: 10px;
+			padding: 20px;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+
+			p:first-child {
+				font-size: 14px;
+				line-height: 20px;
+				font-weight: 400;
+				color: #333333;
+				margin: 0;
+			}
+			p{
+				font-size: 14px;
+				line-height: 20px;
+				font-weight: 700;
+				color: #333333;
+				margin-top: 20px;
+			}
+
+			.text__btn {
+				margin: 7px auto 0;
+				background-color: #006c86;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+				border-radius: 6px;
+
+				.btn__link {
+					padding: 10px 67px;
+					color: #fff;
+					text-transform: uppercase;
+
+				}
+			}
+		}
+
+	}
+}
+
+.post__container {
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 0 38px;
+	background-color: #eeeeee;
+
+	.post__item {
+		width: 32%;
+		display: flex;
+		flex-direction: column;
+		background-color: #fff;
+		border-radius: 10px;
+		overflow: hidden;
+
+		.post__img {
+			width: 100%;
+
+			img {
+				width: 100%;
+				max-height: 170px;
+			}
+		}
+		.post__title {
+			font-family: 'Roboto', sans-serif;
+			font-size: 18px;
+			line-height: 12px;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: #000000;
+			margin: 20px 20px 0;
+
+		}
+		.post__description {
+			font-size: 13px;
+			line-height: 1.2;
+			font-weight: 400;
+			color: #333333;
+			margin: 14px 20px 17px;
+		}
+	}
+}
+.images__container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 10px;
+	padding-bottom: 42px;
+
+	.images__item {
+		width: 15%;
+		background-color: #6f6f6f;
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+	}
+	.images__btn {
+		display: none;
+	}
+}
+
+//==== mobile =============================================================================================
+@media (max-width: 767px) {
+	._container {
+		margin: 0 20px;
+		padding: 0;
+	}
+	.form__container {
+		flex-wrap: wrap;
+		background-color: transparent;
+		padding-top: 20px;
+
+		.form__section {
+			width: 100%;
+
+			fieldset {
+				max-width: 766px;
+			}
+		}
+		.text__section {
+			width: 100%;
+			padding: 0;
+
+			.text__container {
+				margin: 0 auto;
+				width: 100%;
+				background-color: #fff;
+				max-width: 766px;
+
+				.text__btn {
+					margin: 7px auto 0 0;
+				}
+			}
+		}
+	}
+
+	.post__container {
+		flex-wrap: wrap;
+		.post__item {
+			width: 100%;
+			margin-top: 20px;
+
+			.post__img {
+				img {
+					max-height: 300px;
+				}
+			}
+		}
+	}
+	.images__container {
+		padding-top: 20px;
+		.images__item {
+			width: 48%;
+			transition: all 0.6s ease;
+
+			&:nth-child(n+5) {
+				display: none;
+
+				&._active {
+					display: flex;
+				}
+			}
+		}
+		.images__btn {
+			margin: 20px auto 20px;
+			text-transform: uppercase;
+			color: #3b5998;
+			text-decoration: underline;
+			font-family: "Roboto", sans-serif;
+			font-weight: 700;
+			display: block;
+		}
+	}
+}

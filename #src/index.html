@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('_head.html',{
+	"title":"NewAgeLab - Responsive layout"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('_header.html',{})
+			<main class="page">
+				<div class="form__container _container">
+					<form action="" class="form__section" name="Form">
+						<fieldset>
+							<legend>Form #5.1</legend>
+							<div class="input__group first__input">
+								<label for="label_1">Label #1</label>
+								<input type="text" class="main__input input" id="label_1" placeholder=" ">
+							</div>
+							<div class="input__group">
+								<label for="label_2">Label #2</label>
+								<input type="text" class="secondary__input input" id="label_2" placeholder=" ">
+							</div>
+							<div class="input__group">
+								<label for="label_3">Label #3</label>
+								<input type="text" class="secondary__input input" id="label_3" placeholder=" ">
+							</div>
+							<div class="input__group">
+								<label for="label_4">Label #4</label>
+								<input type="text" class="secondary__input input" id="label_4" placeholder=" ">
+							</div>
+							<div class="input__group">
+								<label for="label_5">Label #5</label>
+								<input type="text" class="secondary__input input" id="label_5" placeholder=" ">
+							</div>
+						</fieldset>
+
+						<input class="submit__btn" type="submit" value="Submit">
+					</form>
+					<div class="text__section">
+						<div class="text__container">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>
+							<p><strong>Ut enim ad minim veniam, quis nostrud exercitation</strong></p>
+
+							<div class="text__btn">
+								<a href="#" class="btn__link">More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="post__container _container">
+					<div class="post__item">
+						<div class="post__img">
+							<img src="img/post-one.jpg" alt="man on a skateboard">
+						</div>
+						<h2 class="post__title">Lorem ipsum dolor sit</h2>
+						<p class="post__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+					</div>
+					<div class="post__item">
+						<div class="post__img">
+							<img src="img/post-two.jpg" alt="Dock">
+						</div>
+						<h2 class="post__title">Lorem ipsum</h2>
+						<p class="post__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
+					</div>
+					<div class="post__item">
+						<div class="post__img">
+							<img src="img/post-3.jpg" alt="skateboarding area">
+						</div>
+						<h2 class="post__title">Lorem ipsum dolor</h2>
+						<p class="post__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem</p>
+					</div>
+				</div>
+
+				<div class="images__container _container">
+
+					<div class="images__item">#9</div>
+					<div class="images__item">#10</div>
+					<div class="images__item">#11</div>
+					<div class="images__item">#12</div>
+					<div class="images__item">#12</div>
+					<div class="images__item">#13</div>
+					<div class="images__item">#14</div>
+					<div class="images__item">#15</div>
+					<div class="images__item">#16</div>
+					<div class="images__item">#17</div>
+					<div class="images__item">#18</div>
+					<div class="images__item">#19</div>
+
+					<button class="images__btn" id="show_more_btn">Show more</button>
+				</div>
+			</main>
+			@@include('_footer.html',{})
+		</div>
+		@@include('_js.html',{})
+	</body>
+</html>
